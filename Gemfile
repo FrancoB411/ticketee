@@ -18,6 +18,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'dynamic_form'
 end
 
 gem 'jquery-rails'
@@ -29,7 +30,7 @@ group :test do
   gem 'cucumber-rails', '1.0.6'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'dynamic_form'
+  gem 'factory_girl'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
