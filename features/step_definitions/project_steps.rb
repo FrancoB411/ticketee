@@ -1,3 +1,8 @@
-Given /^there is a project called "([^\"]*)"$/ do |name|
-  @project = Factory(:project, :name => name)
+Given /^there is a project called "([^\""]*)"$/ do |name|
+ @project = Factory(:project, :name => name)
 end
+
+
+# Given /^there is a project called "([^\"]*)"$/ do |name|
+#   @project = Factory(:project, :name => name)
+# end
