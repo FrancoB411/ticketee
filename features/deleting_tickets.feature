@@ -11,7 +11,6 @@ Feature: Deleting tickets
     Given I am on the homepage
     When I follow "TextMate 2"
     And I follow "Make it shiny!"
-  
   Scenario: Deleting a ticket
     When I follow "Delete Ticket"
     Then I should see "Ticket has been deleted."
