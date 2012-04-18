@@ -11,11 +11,13 @@ Ticketee::Application.routes.draw do
   # first created -> highest priority.
 
 root(:to => "projects#index")
-resources :projects do
-  resources :tickets
+  resources :projects do
+    resources :tickets
+  end
 
-end
-
+ put '/admin/users/:user_id/permissions',
+                  :to => 'admin/permissions#update',
+                  :as => :update_user_permissions
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -73,7 +75,9 @@ end
 
 namespace :admin do
   root :to => "base#index"
-  resources :users
+  resources :users do
+    resources :permissions
+  end
 end
 
 end
