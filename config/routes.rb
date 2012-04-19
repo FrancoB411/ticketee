@@ -18,6 +18,8 @@ root(:to => "projects#index")
  put '/admin/users/:user_id/permissions',
                   :to => 'admin/permissions#update',
                   :as => :update_user_permissions
+                  
+resources :files
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

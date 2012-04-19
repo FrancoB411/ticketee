@@ -1,0 +1,42 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m[33m*[0m
+
+Pending:
+[33m  Admin::PermissionsHelper add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/helpers/admin/permissions_helper_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/helpers/admin/permissions_helper_spec.rb:14[0m
+[33m  Admin::UsersHelper add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/helpers/admin/users_helper_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/helpers/admin/users_helper_spec.rb:14[0m
+[33m  ProjectsHelper add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/helpers/projects_helper_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/helpers/projects_helper_spec.rb:14[0m
+[33m  TicketsHelper add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/helpers/tickets_helper_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/helpers/tickets_helper_spec.rb:14[0m
+[33m  UsersHelper add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/helpers/users_helper_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/helpers/users_helper_spec.rb:14[0m
+[33m  Asset add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/models/asset_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/models/asset_spec.rb:4[0m
+[33m  Permission add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/models/permission_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/models/permission_spec.rb:4[0m
+[33m  Project add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/models/project_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/models/project_spec.rb:4[0m
+[33m  Ticket add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/models/ticket_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/models/ticket_spec.rb:4[0m
+[33m  User add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/models/user_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/models/user_spec.rb:4[0m
+[33m  users/index.html.erb add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/views/admin/users/index.html.erb_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/views/admin/users/index.html.erb_spec.rb:4[0m
+[33m  users/confirmation.html.erb add some examples to (or delete) /Users/francobarbeite/dropbox/Franco/Code/rails_projects/Ticketee/spec/views/users/confirmation.html.erb_spec.rb[0m
+[36m    # No reason given[0m
+[36m    # ./spec/views/users/confirmation.html.erb_spec.rb:4[0m
+
+Finished in 1.52 seconds
+[33m27 examples, 0 failures, 12 pending[0m

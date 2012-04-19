@@ -13,7 +13,3 @@ class Project < ActiveRecord::Base
   end
 end
 
-
-# has_many :tickets, dependent: :destroy
-#  has_many :tickets, :dependent => :destroy
-#  validates :name, :presence => true
