@@ -7,9 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #s@gmail.com, password: password
+
+
+                  
+user = User.create(email: "user@ticketee.com", password: "password")
+user.confirm!
+
 admin_user = User.create( :email => "admin@ticketee.com",
                           :password => "password")
 admin_user.admin = true
 admin_user.confirm!
 
 Project.create(:name => "Ticketee Beta")
+
+Permission.create!(:user => User.find_by_email!("user@ticketee.com"),
+                   :thing => Project.find_by_name("Ticketee Beta"),
+                   :action => "view")
+                   
+Permission.create!(:user => User.find_by_email!("user@ticketee.com"),
+                   :thing => Project.find_by_name("Ticketee Beta"),
+                   :action => "create tickets")
