@@ -12,7 +12,6 @@ When /^I check "([^"]*)" for "([^"]*)"$/ do |permission, name|
 end
 
 def create_permission(email, object, action)
-  puts action
   Permission.create!(:user => User.find_by_email!(email),
                      :thing => object,
                      :action => action)

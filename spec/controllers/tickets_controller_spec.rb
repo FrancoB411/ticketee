@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe TicketsController do
   let(:user) { create_user! }
-  let(:project) { Factory(:project) }
-  let(:ticket) { Factory(:ticket, :project => project, :user => user )}
+  let(:project) { FactoryGirl.create(:project) }
+  let(:ticket) { FactoryGirl.create(:ticket, :project => project, :user => user )}
                                   
   context "standard users" do
     it "cannot access a ticket for a project" do
