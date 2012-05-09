@@ -15,6 +15,10 @@ root(:to => "projects#index")
     resources :tickets
   end
 
+resources :tickets do
+    resources :comments
+end
+
  put '/admin/users/:user_id/permissions',
                   :to => 'admin/permissions#update',
                   :as => :update_user_permissions
