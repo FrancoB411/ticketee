@@ -27,3 +27,17 @@ Permission.create!(:user => User.find_by_email!("user@ticketee.com"),
 Permission.create!(:user => User.find_by_email!("user@ticketee.com"),
                    :thing => Project.find_by_name("Ticketee Beta"),
                    :action => "create tickets")
+                   
+State.create( :name       =>  "New",
+              :background =>  "#85FF00",
+              :color      =>  "white")
+              
+State.create( :name       =>  "Open",
+              :background =>  "#00CFFD",
+              :color      =>  "white")
+              
+State.create( :name       =>  "Closed",
+              :background =>  "black",
+              :color      =>  "white")
+
+puts "seeding completed successfully"
