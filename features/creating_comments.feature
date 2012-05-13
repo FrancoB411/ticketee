@@ -22,6 +22,7 @@ Feature: Creating Comments
     And I fill in "Text" with "Added a comment!"
     And I press "Create Comment"
     Then I should see "Comment has been created"
+    # Then show me the page
     Then I should see "Added a comment!" within "#comments"
     
   Scenario: Creating an invalid comment
@@ -38,5 +39,8 @@ Feature: Creating Comments
     Then I should see "Comment has been created."
     # Then show me the page
     And I should see "Open" within "#ticket .state"
+    Then I should see "State: Open" within "#comments"
+    
+    
     
   
