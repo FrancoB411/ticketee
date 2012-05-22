@@ -16,7 +16,12 @@ root(:to => "projects#index")
   end
 
 resources :tickets do
-    resources :comments
+  resources :comments
+  resources :tags do
+    member do
+      delete :remove
+    end
+  end
 end
 
  put '/admin/users/:user_id/permissions',
