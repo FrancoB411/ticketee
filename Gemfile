@@ -25,6 +25,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'rspec-rails', '~> 2.5'
   gem 'factory_girl'
+  gem 'gmail'
 end
 
 group :test do

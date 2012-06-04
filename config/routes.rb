@@ -14,7 +14,7 @@ root(:to => "projects#index")
   resources :projects do
     resources :tickets do
       collection do
-       get :search 
+        get :search 
       end
       
       member do
