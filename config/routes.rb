@@ -16,6 +16,10 @@ root(:to => "projects#index")
       collection do
        get :search 
       end
+      
+      member do
+        post :watch
+      end
     end
   end
 
