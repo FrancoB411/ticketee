@@ -23,7 +23,7 @@ Feature: Ticket Notifications
     
     Then "alice@ticketee.com" should receive an email
     When "alice@ticketee.com" opens the email
-    # Then save and open current email
+    Then save and open current email
     Then they should see "[ticketee] TextMate 2 - Release date" in the email subject
     And they should see "updated the Release date ticket" in the email body
     And the email should contain 2 parts

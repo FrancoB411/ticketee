@@ -1,7 +1,7 @@
 Feature: Deleting tags
   In order to remove old tags
   As a user
-  i want to click a buttla nd make them go away
+  I want to click a button and make them go away
   
   Background:
     Given there are the following users:
