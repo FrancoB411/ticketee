@@ -24,11 +24,6 @@ Then /^there should be an email from Ticketee in my inbox$/ do
       mail.delete!
       @received_mail = true
     end
-  # # @mails = @gmail.inbox.find(:unread, :from => "ticketee@gmail.com") do |mail|
-  #   if mail.subject =~ /^\[ticketee]/
-  #     mail.delete!
-  #     @received_mail = true
-  #   end
   end
   @received_mail.should be_true
   
