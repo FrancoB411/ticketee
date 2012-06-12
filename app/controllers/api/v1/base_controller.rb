@@ -13,4 +13,13 @@ class Api::V1::BaseController < ActionController::Base
     def current_user
       @current_user
     end
+    
+    def authorize_admin!    
+      if !@current_user.admin? #I took out a level of this line cause it was the same line twice. It just seemed redundant
+        error = { :error => "You must be an admin to do that." }
+        warden.custom_failure!
+        render params[:format].to_sym => error, :status => 401
+      end
+    end
+          
 end
