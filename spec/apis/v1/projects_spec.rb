@@ -37,6 +37,26 @@ describe "/api/v1/projects", :type => :api do
       projects = Nokogiri::XML(last_response.body)
       projects.css("project name").text.should eql("Ticketee")
     end
+    
+    context "show" do
+      let(:url)  { "api/v1/projects/#{@project.id}"}
+      
+      before do
+        FactoryGirl.create( :ticket, :project => @project)
+      end
+      
+      it "JSON" do
+        get "#{url}.json", :token => token
+        project = @project.to_json(:methods => "last_ticket")
+        last_response.body.should eql(project)
+        last_response.status.should eql(200)
+        
+        project_response =  JSON.parse(last_response.body) #["project"] Do we need this? Is this going to mess things up later?
+        ticket_title = project_response["last_ticket"]["title"]
+        ticket_title.should_not be_blank
+      end
+    end 
+    
   end
   
   context "creating a project" do
