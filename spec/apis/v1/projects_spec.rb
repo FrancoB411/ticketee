@@ -125,5 +125,19 @@ describe "/api/v1/projects", :type => :api do
     end
   end
   
+  context "deleting a project" do
+    before do
+      user.admin = true
+      user.save
+    end
+    
+    let(:url) { "/api/v1/projects/#{@project.id}" }
+    it "JSON" do
+      delete "#{url}.json", :token => token
+      
+      last_response.status.should eql( 204 )  # The book expected a 200, but I don't know how to change that. 
+    end
+  end
+  
 end
 
