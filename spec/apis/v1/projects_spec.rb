@@ -27,7 +27,7 @@ describe "/api/v1/projects", :type => :api do
       projects = JSON.parse(last_response.body)
       
       projects.any? do |p|
-        p["name"] == "Ticketee"
+        p["project"]["name"] == "Ticketee"
       end.should be_true
     end
     
@@ -51,8 +51,8 @@ describe "/api/v1/projects", :type => :api do
         last_response.body.should eql(project)
         last_response.status.should eql(200)
         
-        project_response =  JSON.parse(last_response.body) #["project"] Do we need this? Is this going to mess things up later?
-        ticket_title = project_response["last_ticket"]["title"]
+        project_response =  JSON.parse(last_response.body)["project"] 
+        ticket_title = project_response["last_ticket"]["ticket"]["title"]
         ticket_title.should_not be_blank
       end
     end 
@@ -89,5 +89,41 @@ describe "/api/v1/projects", :type => :api do
       last_response.body.should eql(errors)
     end
   end
+  
+  context "updating a project" do
+    before do
+      user.admin = true
+      user.save
+    end
+    let(:url) { "/api/v1/projects/#{@project.id}" }
+  
+    it "successful JSON" do
+      @project.name.should eql( "Ticketee" )
+      put "#{url}.json",    token:    token,
+                            project:  { 
+                              name:   "Not Ticketee"
+                            }
+      last_response.status.should eql( 204 ) # The book expected a 200, but I don't know how to change that. 
+      
+      @project.reload
+      @project.name.should eql( "Not Ticketee" )
+      last_response.body.should eql( "" ) # The book expected an empty hash, but i don't know how to change that either.
+    end
+    
+    it "unsuccessful JSON" do
+      @project.name.should eql( "Ticketee" )
+      put "#{url}.json",  token:    token,
+                          project:  {
+                            :name => ""
+                            } 
+      last_response.status.should eql( 422 )
+      
+      @project.reload
+      @project.name.should eql( 'Ticketee' )
+      errors = { :errors => { :name => [ "can't be blank" ] } }
+      last_response.body.should eql( errors.to_json )
+    end
+  end
+  
 end
 

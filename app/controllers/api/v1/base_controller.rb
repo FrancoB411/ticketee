@@ -1,7 +1,8 @@
 class Api::V1::BaseController < ActionController::Base
-  before_filter :authenticate_user
-  before_filter :find_project, only: [:show]
   respond_to :json, :xml
+  
+  before_filter :authenticate_user
+
   
   private
     def authenticate_user
@@ -11,16 +12,15 @@ class Api::V1::BaseController < ActionController::Base
       end
     end
     
-    def current_user
-      @current_user
-    end
-    
     def authorize_admin!    
-      if !@current_user.admin? #I took out a level of this line cause it was the same line twice. It just seemed redundant
+      if !@current_user.admin?
         error = { :error => "You must be an admin to do that." }
         warden.custom_failure!
         render params[:format].to_sym => error, :status => 401
       end
     end
-          
+         
+    def current_user
+      @current_user
+    end 
 end
